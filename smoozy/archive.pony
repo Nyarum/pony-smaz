@@ -3,7 +3,7 @@ use "lib:smaz"
 use @smaz_compress[I32](in_string: Pointer[U8] tag, inlen: USize, out_string: Pointer[U8] tag, outlen: USize)
 use @smaz_decompress[I32](in_string: Pointer[U8] tag, inlen: USize, out_string: Pointer[U8] tag, outlen: USize)
 
-primitive Smaz
+primitive Smoozy
   fun tag _make_buffer(size: USize): String iso^ =>
     recover String.from_cstring(
       @pony_alloc[Pointer[U8]](@pony_ctx[Pointer[None] iso](), size), size
